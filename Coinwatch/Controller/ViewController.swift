@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate {
     
-    let coinManager = CoinManager()
+    var coinManager = CoinManager()
     
     @IBOutlet weak var cryptoAmountLabel: UILabel!
     @IBOutlet weak var currencyNameLabel: UILabel!
@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        coinManager.delegate = self
         
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
@@ -49,3 +51,18 @@ extension ViewController: UIPickerViewDataSource{
     }
 }
 
+//MARK: - CoinManagerDelegate
+
+extension ViewController: CoinManagerDelegate{
+    func didUpdateCoin(_ coinManager: CoinManager, coin: CoinModel) {
+        cryptoAmountLabel.text = coin.rateString
+        currencyNameLabel.text = coin.asset_id_quote
+        print("didUpdateCoin...")
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+    
+}
