@@ -12,8 +12,8 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     
     let coinManager = CoinManager()
     
-    @IBOutlet weak var cryptoLabel: UILabel!
-    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var cryptoAmountLabel: UILabel!
+    @IBOutlet weak var currencyNameLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
     override func viewDidLoad() {
@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     
     
 }
+
+//MARK: - UIPickerViewDataSource
 
 extension ViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

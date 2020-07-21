@@ -96,8 +96,8 @@
                         <viewLayoutGuide key="safeArea" id="Jnv-bt-05q"/>
                     </view>
                     <connections>
-                        <outlet property="cryptoLabel" destination="MIY-aS-Mt3" id="iwT-6o-YLM"/>
-                        <outlet property="currencyLabel" destination="psd-bO-FPa" id="Bma-UT-0vT"/>
+                        <outlet property="cryptoAmountLabel" destination="MIY-aS-Mt3" id="iwT-6o-YLM"/>
+                        <outlet property="currencyNameLabel" destination="psd-bO-FPa" id="Bma-UT-0vT"/>
                         <outlet property="currencyPicker" destination="Sgx-8i-Fv5" id="hf5-Nl-E28"/>
                     </connections>
                 </viewController>
