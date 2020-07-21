@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="rqK-pV-GMD">
             <objects>
-                <viewController id="t6i-4K-Xbw" customClass="ViewController" customModule="ByteCoin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t6i-4K-Xbw" customClass="ViewController" customModule="Coinwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hwo-eZ-HY3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cjd-ug-OgN">
                                 <rect key="frame" x="0.0" y="54" width="414" height="165"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ByteCoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFA-rr-vM7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoinWatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFA-rr-vM7">
                                         <rect key="frame" x="92" y="0.0" width="230" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Dol-gs-Df8"/>
@@ -95,6 +95,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jnv-bt-05q"/>
                     </view>
+                    <connections>
+                        <outlet property="cryptoLabel" destination="MIY-aS-Mt3" id="iwT-6o-YLM"/>
+                        <outlet property="currencyLabel" destination="psd-bO-FPa" id="Bma-UT-0vT"/>
+                        <outlet property="currencyPicker" destination="Sgx-8i-Fv5" id="hf5-Nl-E28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkP-fa-Uqq" sceneMemberID="firstResponder"/>
             </objects>
