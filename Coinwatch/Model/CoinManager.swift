@@ -70,7 +70,7 @@ struct CoinManager {
             let asset_id_quote = decodedData.asset_id_quote
             let rate = decodedData.rate
             
-            let coinModel = CoinModel(time: time, asset_id_base: asset_id_base, asset_id_quote: asset_id_quote, rate: rate)
+            let coinModel = CoinModel(fullDateAndTime: time, asset_id_base: asset_id_base, asset_id_quote: asset_id_quote, rate: rate)
             
             print("\(asset_id_base) / \(asset_id_quote) = \(rate)")
             

@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var cryptoAmountLabel: UILabel!
     @IBOutlet weak var currencyNameLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var updateTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class ViewController: UIViewController, UIPickerViewDelegate {
         
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
+        
+        cryptoAmountLabel.text = "---.-----"
+        currencyNameLabel.text = "   "
+        updateTimeLabel.text = "Choose a currency."
     }
     
     
@@ -57,11 +62,19 @@ extension ViewController: CoinManagerDelegate{
     func didUpdateCoin(_ coinManager: CoinManager, coin: CoinModel) {
         cryptoAmountLabel.text = coin.rateString
         currencyNameLabel.text = coin.asset_id_quote
+        self.updateTimeLabel.text = "On \(coin.date) at \(coin.time) UTC."
         print("didUpdateCoin...")
     }
     
     func didFailWithError(error: Error) {
+        print("didFailWithError: ")
         print(error)
+        DispatchQueue.main.async {
+            self.cryptoAmountLabel.text = "---.-----"
+            self.currencyNameLabel.text = "N/A"
+            self.updateTimeLabel.text = "Currency not available at the moment."
+        }
+        print("didFailWithError -> updated UI though")
     }
     
     
